@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shrimad Bhagavad Gita - Complete Sacred Text</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Devanagari:wght@400;600&display=swap');
+
+  :root {
+    --saffron: #FF6B00;
+    --deep-saffron: #E65100;
+    --gold: #FFD700;
+    --light-gold: #FFF3CD;
+    --cream: #FFF8F0;
+    --dark-brown: #3E1A00;
+    --medium-brown: #6D3A00;
+    --lotus-pink: #FF8FAB;
+    --sacred-red: #8B0000;
+    --bg-dark: #1A0A00;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lora', serif;
+    background-color: var(--cream);
+    color: var(--dark-brown);
+    line-height: 1.8;
+  }
+
+  /* ===== TOP HEADER ===== */
+  .top-bar {
+    background: linear-gradient(135deg, var(--bg-dark), #3E1A00, #7A3500);
+    padding: 8px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--gold);
+  }
+  .top-bar span {
+    color: var(--gold);
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+  }
+
+  header {
+    background: linear-gradient(180deg, #1A0A00 0%, #3E1A00 40%, #7A3500 100%);
+    padding: 40px 20px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid var(--gold);
+  }
+  header::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(255,215,0,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .om-symbol {
+    font-size: 5rem;
+    color: var(--gold);
+    text-shadow: 0 0 30px rgba(255,215,0,0.8), 0 0 60px rgba(255,107,0,0.4);
+    display: block;
+    margin-bottom: 10px;
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from { text-shadow: 0 0 20px rgba(255,215,0,0.6), 0 0 40px rgba(255,107,0,0.3); }
+    to   { text-shadow: 0 0 40px rgba(255,215,0,1),   0 0 80px rgba(255,107,0,0.6); }
+  }
+
+  header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  }
+  header h1 .devanagari {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 2.2rem;
+    display: block;
+    color: #FFE082;
+    margin-bottom: 6px;
+  }
+  header .subtitle {
+    color: #FFCC80;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+  header .subtitle2 {
+    color: #FFB74D;
+    font-size: 0.9rem;
+    margin-top: 4px;
+    letter-spacing: 2px;
+  }
+
+  /* Lotus decoration */
+  .lotus-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px 0 5px;
+  }
+  .lotus-row span { font-size: 1.4rem; }
+
+  /* ===== NAV ===== */
+  nav {
+    background: linear-gradient(90deg, var(--deep-saffron), var(--saffron), var(--deep-saffron));
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+    border-bottom: 2px solid var(--gold);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 10px;
+  }
+  nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 12px 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+  }
+  nav button:hover { background: rgba(255,255,255,0.15); border-bottom-color: var(--gold); }
+  nav button.active { background: rgba(0,0,0,0.2); border-bottom-color: var(--gold); color: var(--gold); }
+
+  /* ===== MAIN ===== */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+  }
+
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ===== HOME PAGE ===== */
+  .home-hero {
+    background: linear-gradient(135deg, #3E1A00, #7A3500);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 35px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .home-hero::after {
+    content: '॥ श्रीमद्भगवद्गीता ॥';
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: rgba(255,215,0,0.15);
+    font-family: 'Noto Sans Devanagari';
+    font-size: 1.4rem;
+  }
+  .home-hero h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  .home-hero p { color: #FFCC80; font-size: 1.05rem; line-height: 1.9; }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+  }
+  .intro-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    border-left: 4px solid var(--saffron);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+  }
+  .intro-card:hover { transform: translateY(-3px); }
+  .intro-card h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--deep-saffron);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+  .intro-card p { color: #5D4037; font-size: 0.95rem; }
+
+  /* Chapter index cards */
+  .chapters-index {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border: 1px solid #FFE0B2;
+  }
+  .chapters-index h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--deep-saffron);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+  .chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .chapter-card {
+    background: linear-gradient(135deg, #FFF3E0, #FFF8F0);
+    border: 1px solid #FFB74D;
+    border-radius: 10px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+  }
+  .chapter-card:hover {
+    background: linear-gradient(135deg, var(--saffron), var(--deep-saffron));
+    color: white;
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(255,107,0,0.4);
+  }
+  .chapter-card .ch-num {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: var(--saffron);
+    font-weight: 900;
+  }
+  .chapter-card:hover .ch-num { color: var(--gold); }
+  .chapter-card .ch-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin: 4px 0 2px;
+    color: var(--dark-brown);
+  }
+  .chapter-card:hover .ch-name { color: white; }
+  .chapter-card .ch-hindi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 0.9rem;
+    color: var(--medium-brown);
+  }
+  .chapter-card:hover .ch-hindi { color: #FFE082; }
+  .chapter-card .ch-verses {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 3px;
+  }
+  .chapter-card:hover .ch-verses { color: rgba(255,255,255,0.8); }
+
+  /* ===== CHAPTER PAGE ===== */
+  .chapter-header {
+    background: linear-gradient(135deg, #1A0A00, #5D2E00);
+    border-radius: 14px;
+    padding: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+  }
+  .chapter-header .ch-number {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .chapter-header h2 {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    color: var(--gold);
+    font-size: 2rem;
+    margin: 8px 0 4px;
+  }
+  .chapter-header .ch-eng-title {
+    font-family: 'Cinzel', serif;
+    color: #FFB74D;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  .chapter-header .ch-desc {
+    color: #FFCC80;
+    font-style: italic;
+    font-size: 0.95rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .chapter-header .verse-count {
+    margin-top: 12px;
+    color: #FFE082;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+  }
+
+  /* Shloka card */
+  .shloka-card {
+    background: white;
+    border-radius: 14px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid #FFE0B2;
+    transition: box-shadow 0.3s;
+  }
+  .shloka-card:hover { box-shadow: 0 8px 32px rgba(255,107,0,0.15); }
+
+  .shloka-num-bar {
+    background: linear-gradient(90deg, var(--saffron), var(--deep-saffron));
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .shloka-num-bar .verse-label {
+    font-family: 'Cinzel', serif;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .shloka-num-bar .divider { flex: 1; height: 1px; background: rgba(255,255,255,0.3); }
+
+  .shloka-body { padding: 24px 28px; }
+
+  .sanskrit-block {
+    background: linear-gradient(135deg, #FFF3E0, #FFF8F0);
+    border-left: 5px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 22px;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  .sanskrit-text {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 1.25rem;
+    color: var(--dark-brown);
+    line-height: 2.2;
+    font-weight: 600;
+  }
+  .transliteration {
+    font-style: italic;
+    color: #795548;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    line-height: 1.8;
+  }
+
+  .translation-section { margin-bottom: 14px; }
+  .lang-badge {
+    display: inline-block;
+    background: var(--saffron);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+  }
+  .lang-badge.hindi { background: var(--sacred-red); }
+  .lang-badge.commentary { background: #5D4037; }
+
+  .translation-text {
+    color: #3E2723;
+    font-size: 0.98rem;
+    line-height: 1.9;
+    padding-left: 10px;
+    border-left: 2px solid #FFB74D;
+    margin-left: 5px;
+  }
+  .translation-text.hindi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 1rem;
+    border-left-color: var(--sacred-red);
+  }
+  .translation-text.commentary {
+    font-style: italic;
+    color: #4E342E;
+    border-left-color: #8D6E63;
+    font-size: 0.93rem;
+  }
+
+  /* Nav between chapters */
+  .chapter-nav-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    gap: 15px;
+  }
+  .chapter-nav-btns button {
+    background: linear-gradient(135deg, var(--saffron), var(--deep-saffron));
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(255,107,0,0.3);
+  }
+  .chapter-nav-btns button:hover {
+    background: linear-gradient(135deg, var(--deep-saffron), #B71C1C);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,107,0,0.4);
+  }
+  .chapter-nav-btns button:disabled {
+    background: #ccc; cursor: not-allowed; box-shadow: none; transform: none;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: linear-gradient(135deg, #1A0A00, #3E1A00);
+    padding: 35px 20px;
+    text-align: center;
+    border-top: 3px solid var(--gold);
+    margin-top: 40px;
+  }
+  footer p { color: #FFCC80; font-size: 0.9rem; margin: 5px 0; }
+  footer .footer-om {
+    font-size: 2.5rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* Decorative divider */
+  .sacred-divider {
+    text-align: center;
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin: 25px 0;
+    letter-spacing: 8px;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.8rem; }
+    .om-symbol { font-size: 3.5rem; }
+    nav button { padding: 10px 6px; font-size: 0.68rem; }
+    .shloka-body { padding: 16px 18px; }
+    .sanskrit-text { font-size: 1.05rem; }
+    .home-hero { padding: 25px 18px; }
+    .home-hero h2 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span>॥ हरे कृष्ण ॥ ॐ नमो भगवते वासुदेवाय ॥ हरे कृष्ण ॥</span>
+</div>
+
+<header>
+  <span class="om-symbol">ॐ</span>
+  <h1>
+    <span class="devanagari">श्रीमद्भगवद्गीता</span>
+    Shrimad Bhagavad Gita
+  </h1>
+  <div class="lotus-row">
+    <span>🪷</span><span>✦</span><span>🌸</span><span>✦</span><span>🪷</span>
+  </div>
+  <p class="subtitle">The Song of God — As Spoken by Lord Sri Krishna to Arjuna</p>
+  <p class="subtitle2">18 Chapters • 700 Shlokas • Sanskrit | English | Hindi | Commentary</p>
+</header>
+
+<nav>
+  <div class="nav-inner" id="mainNav">
+    <button class="active" onclick="showPage('home')">🏠 Home</button>
+    <!-- Chapter buttons added by JS -->
+  </div>
+</nav>
+
+<main>
+
+  <!-- ===== HOME PAGE ===== -->
+  <div id="page-home" class="page active">
+    <div class="home-hero">
+      <h2>🌺 The Eternal Song of God 🌺</h2>
+      <p>
+        The Bhagavad Gita, often called the Gita, is a 700-verse Hindu scripture that is part of the epic Mahabharata.
+        It is a sacred dialogue between Prince Arjuna and his guide Lord Krishna on the battlefield of Kurukshetra.
+        This divine conversation covers the essence of life, duty (Dharma), devotion (Bhakti), knowledge (Jnana),
+        and the path to liberation (Moksha). It is the eternal guide for all of humanity.
+      </p>
+    </div>
+
+    <div class="intro-grid">
+      <div class="intro-card">
+        <h3>📖 About the Gita</h3>
+        <p>The Bhagavad Gita forms chapters 23–40 of the Bhishma Parva of the Mahabharata. It was spoken by Lord Krishna to Arjuna on the battlefield of Kurukshetra approximately 5,000 years ago. It contains the essence of the Upanishads and Vedanta philosophy.</p>
+      </div>
+      <div class="intro-card">
+        <h3>⚔️ The Setting</h3>
+        <p>On the battlefield of Kurukshetra, as the Pandavas and Kauravas prepared for war, Arjuna was overwhelmed by grief at the thought of fighting his own kith and kin. It was at this moment that Lord Krishna revealed the eternal wisdom of the Bhagavad Gita.</p>
+      </div>
+      <div class="intro-card">
+        <h3>🧘 The Teachings</h3>
+        <p>The Gita teaches the three paths to liberation: Karma Yoga (path of action), Jnana Yoga (path of knowledge), and Bhakti Yoga (path of devotion). It explains the nature of the Self (Atma), God (Brahman), creation, and the ultimate purpose of human life.</p>
+      </div>
+      <div class="intro-card">
+        <h3>🙏 Universal Message</h3>
+        <p>The Gita's message transcends religion, caste, and time. Its core teaching — "Do your duty without attachment to results" — is as relevant today as it was 5,000 years ago. It has inspired great leaders, thinkers, and saints across the world.</p>
+      </div>
+    </div>
+
+    <div class="chapters-index">
+      <h2>📚 18 Chapters of the Bhagavad Gita</h2>
+      <div class="chapter-grid" id="chapterIndex"></div>
+    </div>
+  </div>
+
+  <!-- Chapter pages generated by JS -->
+
+</main>
+
+<footer>
+  <span class="footer-om">ॐ</span>
+  <p>॥ श्रीमद्भगवद्गीता ॥ Shrimad Bhagavad Gita</p>
+  <p>यतो धर्मस्ततो जयः — Where there is Dharma, there is Victory</p>
+  <p style="margin-top:10px; color:#FF8C00;">🪷 Hare Krishna 🪷 Jai Shri Krishna 🪷</p>
+</footer>
+
+<script>
+const chapters = [
+  {
+    num: 1, name: "Arjuna Vishada Yoga", hindi: "अर्जुन विषाद योग",
+    eng: "The Yoga of Arjuna's Grief", verses: 47,
+    desc: "The first chapter describes the scene at the battlefield of Kurukshetra. Arjuna, overcome with grief and confusion at the prospect of fighting his own relatives, lays down his bow. This chapter sets the stage for Lord Krishna's divine teachings.",
+    shlokas: [
+      {
+        num: "1.1",
+        sanskrit: "धृतराष्ट्र उवाच\nधर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः।\nमामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय॥",
+        translit: "Dhritarashtra uvacha:\nDharma-kshetre kuru-kshetre samaveta yuyutsavah,\nMamakah Pandavaschaiva kim akurvata Sanjaya.",
+        english: "Dhritarashtra said: O Sanjaya, what did my sons and the sons of Pandu do when they assembled together at the holy field of Kurukshetra, eager for battle?",
+        hindi: "धृतराष्ट्र बोले: हे संजय! धर्म-भूमि कुरुक्षेत्र में युद्ध की इच्छा से एकत्रित हुए मेरे और पांडु के पुत्रों ने क्या किया?",
+        commentary: "The very first word 'Dharma-kshetra' (field of righteousness) is significant. Even the blind king Dhritarashtra sensed that the battle was being fought on sacred ground where righteousness would ultimately prevail. His anxiety reveals his attachment to his sons and his inner awareness that the Pandavas were on the side of Dharma."
+      },
+      {
+        num: "1.28",
+        sanskrit: "अर्जुन उवाच\nदृष्ट्वेमं स्वजनं कृष्ण युयुत्सुं समुपस्थितम्।\nसीदन्ति मम गात्राणि मुखं च परिशुष्यति॥",
+        translit: "Arjuna uvaca:\nDrishtvenam sva-janam Krishna yuyutsum samupasthitam,\nSidanti mama gatrani mukham ca parisusyati.",
+        english: "Arjuna said: O Krishna, seeing my own kinsmen arrayed here with a desire to fight, my limbs fail and my mouth is parched.",
+        hindi: "अर्जुन बोले: हे कृष्ण! युद्ध के लिए सामने खड़े अपने स्वजनों को देखकर मेरे अंग शिथिल हो रहे हैं और मुख सूख रहा है।",
+        commentary: "Arjuna's physical symptoms — weakness in limbs, dry mouth, shivering, and hair standing on end — are the classic signs of extreme grief and anxiety. This is the human condition: when faced with difficult choices involving those we love, we experience paralysis. This is the exact moment when divine guidance becomes essential."
+      },
+      {
+        num: "1.47",
+        sanskrit: "एवमुक्त्वार्जुनः सङ्ख्ये रथोपस्थ उपाविशत्।\nविसृज्य सशरं चापं शोकसंविग्नमानसः॥",
+        translit: "Evam uktvarjunah sankhye rathopastha upavisat,\nVisrijya sa-saram capam soka-samvigna-manasah.",
+        english: "Having thus spoken on the battlefield, Arjuna cast aside his bow and arrows and sat down in the chariot, his mind overwhelmed with grief.",
+        hindi: "इस प्रकार रणभूमि में कहकर, अर्जुन ने अपने धनुष-बाण को त्यागकर, शोक से व्याकुल मन वाले होकर रथ के पिछले भाग में बैठ गए।",
+        commentary: "This powerful concluding verse of Chapter 1 shows the complete breakdown of Arjuna — a great warrior laying down his weapons. This surrender, born of confusion and grief, becomes the starting point of the greatest spiritual teaching ever given. Sometimes, our greatest crises open us to our greatest growth."
+      }
+    ]
+  },
+  {
+    num: 2, name: "Sankhya Yoga", hindi: "सांख्य योग",
+    eng: "The Yoga of Knowledge", verses: 72,
+    desc: "The longest chapter of the Gita. Lord Krishna begins his teachings by explaining the immortal nature of the soul (Atma), the concept of Karma Yoga, and the characteristics of a Sthitaprajna — one of steady wisdom. This chapter is considered the summary of the entire Gita.",
+    shlokas: [
+      {
+        num: "2.11",
+        sanskrit: "श्रीभगवानुवाच\nअशोच्यानन्वशोचस्त्वं प्रज्ञावादांश्च भाषसे।\nगतासूनगतासूंश्च नानुशोचन्ति पण्डिताः॥",
+        translit: "Sri Bhagavan uvaca:\nAsocyan anvasocas tvam prajna-vadams ca bhasase,\nGatasun agatasums ca nanusocanti panditah.",
+        english: "The Blessed Lord said: You grieve for those who are not worth grieving for, yet you speak words of wisdom. The wise grieve neither for the living nor for the dead.",
+        hindi: "श्री भगवान बोले: तुम अशोच्य के लिए शोक करते हो और पंडित जैसी बातें भी करते हो। जो ज्ञानी होते हैं वे न जीवित के लिए और न मृत के लिए शोक करते हैं।",
+        commentary: "Krishna begins his teaching by pointing out the contradiction in Arjuna's position. Arjuna pretends to be wise by talking about consequences, but his grief is based on ignorance of the soul's true nature. True wisdom begins with understanding that the Self (Atma) is eternal and beyond birth and death."
+      },
+      {
+        num: "2.19",
+        sanskrit: "य एनं वेत्ति हन्तारं यश्चैनं मन्यते हतम्।\nउभौ तौ न विजानीतो नायं हन्ति न हन्यते॥",
+        translit: "Ya enam vetti hantaram yas cainam manyate hatam,\nUbhau tau na vijanito nayam hanti na hanyate.",
+        english: "He who thinks that this (soul) slays and he who thinks that this (soul) is slain — both of them fail to perceive the truth. This soul neither slays, nor is it slain.",
+        hindi: "जो इसे (आत्मा को) मारने वाला समझता है और जो इसे मरा हुआ मानता है — दोनों ही नहीं जानते। यह आत्मा न किसी को मारती है और न ही मारी जा सकती है।",
+        commentary: "This is one of the most profound truths in the Gita. The Atma (soul) is the eternal witness — it neither acts nor is acted upon. The sense of being a 'doer' and 'enjoyer' belongs to the ego and the body, not to the pure Self. Understanding this liberates one from guilt, fear, and attachment to results."
+      },
+      {
+        num: "2.20",
+        sanskrit: "न जायते म्रियते वा कदाचिन्नायं भूत्वा भविता वा न भूयः।\nअजो नित्यः शाश्वतोऽयं पुराणो न हन्यते हन्यमाने शरीरे॥",
+        translit: "Na jayate mriyate va kadacin nayam bhutva bhavita va na bhuyah,\nAjo nityah sasvato 'yam purano na hanyate hanyamane sarire.",
+        english: "The soul is never born nor dies at any time. It has not come into being, does not come into being, and will not come into being. It is unborn, eternal, ever-existing, and primeval. It is not slain when the body is slain.",
+        hindi: "यह आत्मा किसी भी काल में न जन्म लेती है और न मरती है। यह न तो कभी उत्पन्न हुई है, न होती है और न होगी। यह अजन्मी, नित्य, शाश्वत और पुरातन है। शरीर के मारे जाने पर भी यह नहीं मारी जाती।",
+        commentary: "This verse contains the eternal truth about the imperishable nature of the soul. The Atma transcends all the categories of time — past, present, and future. It is Sat (existence), Chit (consciousness), and Ananda (bliss) by nature. Understanding this truth is the foundation of all fearlessness and inner peace."
+      },
+      {
+        num: "2.22",
+        sanskrit: "वासांसि जीर्णानि यथा विहाय नवानि गृह्णाति नरोऽपराणि।\nतथा शरीराणि विहाय जीर्णान्यन्यानि संयाति नवानि देही॥",
+        translit: "Vasansi jirnani yatha vihaya navani grhnati naro 'parani,\nTatha sarirani vihaya jirnany anyani samyati navani dehi.",
+        english: "Just as a person puts on new garments, giving up old ones, similarly, the soul accepts new material bodies, giving up the old and useless ones.",
+        hindi: "जैसे मनुष्य पुराने वस्त्रों को त्यागकर नए वस्त्र धारण करता है, वैसे ही आत्मा पुराने शरीरों को त्यागकर नए शरीरों को प्राप्त होती है।",
+        commentary: "This beautiful analogy makes the concept of reincarnation simple and clear. Death is merely the soul changing its 'garment' (body). The soul is the wearer, not the garment. When we identify with our body, we fear death. When we identify with our immortal soul, we transcend all fear."
+      },
+      {
+        num: "2.47",
+        sanskrit: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।\nमा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥",
+        translit: "Karmany evadhikaras te ma phaleshu kadachana,\nMa karma-phala-hetur bhur ma te sango 'stv akarmani.",
+        english: "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself the cause of the results of your activities, and never be attached to not doing your duty.",
+        hindi: "कर्म करना तुम्हारा अधिकार है, फल पर नहीं। कर्मफल की इच्छा मत करो और अकर्म में भी आसक्त मत होओ।",
+        commentary: "This is perhaps the most famous and most quoted verse of the entire Bhagavad Gita — the essence of Karma Yoga. It teaches the secret of action without bondage: perform your duty with full dedication, but release all attachment to the results. This principle, when practiced, leads to freedom from anxiety, stress, and the bondage of desire. It is the recipe for both worldly success and spiritual liberation."
+      },
+      {
+        num: "2.55",
+        sanskrit: "श्रीभगवानुवाच\nप्रजहाति यदा कामान्सर्वान्पार्थ मनोगतान्।\nआत्मन्येवात्मना तुष्टः स्थितप्रज्ञस्तदोच्यते॥",
+        translit: "Sri Bhagavan uvaca:\nPrajahati yada kaman sarvan partha mano-gatan,\nAtmany evatmana tushtah sthita-prajnas tadocyate.",
+        english: "The Blessed Lord said: When a man completely casts off all desires of the mind, O Arjuna, and is satisfied in the Self by the Self alone, then he is said to be one of steady wisdom (Sthitaprajna).",
+        hindi: "श्री भगवान बोले: हे पार्थ! जब मनुष्य मन में स्थित सभी कामनाओं को छोड़ देता है और स्वयं में ही संतुष्ट रहता है, तब वह स्थितप्रज्ञ कहलाता है।",
+        commentary: "Krishna describes the ideal of a Sthitaprajna — one of stable, steady wisdom. Such a person finds their contentment not in external objects but in the Self alone. They are unmoved by sorrow, unexcited by joy, free from fear, anger, and attachment. This state of equanimity is the goal of all spiritual practice."
+      }
+    ]
+  },
+  {
+    num: 3, name: "Karma Yoga", hindi: "कर्म योग",
+    eng: "The Yoga of Action", verses: 43,
+    desc: "In this chapter, Lord Krishna explains Karma Yoga — the path of selfless action. He emphasizes that action is superior to inaction, and that every person must do their prescribed duty for the welfare of the world (Lokasangraha) without attachment.",
+    shlokas: [
+      {
+        num: "3.8",
+        sanskrit: "नियतं कुरु कर्म त्वं कर्म ज्यायो ह्यकर्मणः।\nशरीरयात्रापि च ते न प्रसिद्ध्येदकर्मणः॥",
+        translit: "Niyatam kuru karma tvam karma jyayo hy akarmanas,\nSarira-yatrapic a te na prasiddhyed akarmanas.",
+        english: "Perform your prescribed duty, for action is better than inaction. A man cannot even maintain his physical body without work.",
+        hindi: "तुम नियत कर्म करो, क्योंकि कर्म न करने से कर्म करना श्रेष्ठ है। कर्म न करने से तुम्हारा शरीर-निर्वाह भी संभव नहीं होगा।",
+        commentary: "Krishna makes it clear: doing nothing is not an option. Life itself demands action. The question is not whether to act, but how to act — with wisdom, without ego and attachment to fruits."
+      },
+      {
+        num: "3.16",
+        sanskrit: "एवं प्रवर्तितं चक्रं नानुवर्तयतीह यः।\nअघायुरिन्द्रियारामो मोघं पार्थ स जीवति॥",
+        translit: "Evam pravartitam cakram nanuvartayatiha yah,\nAghayur indriyaramo mogham Partha sa jivati.",
+        english: "O Arjuna, he who in this life does not follow the wheel of creation thus set in motion, is evil in his nature, and lives in vain — he who rejoices only in the senses.",
+        hindi: "हे पार्थ! जो इस प्रकार चलाए गए सृष्टि-चक्र को नहीं चलाता, अर्थात् जो अपना कर्तव्य नहीं निभाता, वह पापायु, इंद्रियारामी मनुष्य व्यर्थ जीता है।",
+        commentary: "Each person is a link in the grand cycle of creation. When we perform our duties selflessly, we sustain this cosmic order. When we live only for sensory pleasure and shirk our responsibilities, we become a burden on creation and live a meaningless life."
+      },
+      {
+        num: "3.21",
+        sanskrit: "यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः।\nस यत्प्रमाणं कुरुते लोकस्तदनुवर्तते॥",
+        translit: "Yad yad acarati sresthah tat tad evetaro janah,\nSa yat pramanam kurute lokas tad anuvartate.",
+        english: "Whatever action a great man performs, common men follow. Whatever standards he sets by exemplary acts, all the world pursues.",
+        hindi: "श्रेष्ठ पुरुष जो-जो आचरण करता है, दूसरे लोग भी वैसा ही करते हैं। वह जो प्रमाण (मानदंड) स्थापित करता है, समस्त संसार उसी का अनुसरण करता है।",
+        commentary: "Great leaders and teachers bear special responsibility — their actions inspire millions. This is why Krishna himself acts, though he needs nothing from creation. His actions set the standard of Dharmic living for all humanity."
+      },
+      {
+        num: "3.27",
+        sanskrit: "प्रकृतेः क्रियमाणानि गुणैः कर्माणि सर्वशः।\nअहङ्कारविमूढात्मा कर्ताहमिति मन्यते॥",
+        translit: "Prakrteh kriyamanani gunaih karmani sarvasah,\nAhankara-vimudhAtma kartaham iti manyate.",
+        english: "All activities are carried out by the three modes (gunas) of material nature. But in ignorance, the soul, deluded by false identification with the body, thinks itself to be the doer.",
+        hindi: "वास्तव में सभी कर्म प्रकृति के तीन गुणों द्वारा किए जाते हैं, परंतु अहंकार से मोहित आत्मा मान लेती है कि 'मैं कर्ता हूँ'।",
+        commentary: "This verse strikes at the root of ego. The feeling 'I am the doer' is the fundamental illusion (maya). In reality, it is Nature (Prakriti) — through the three gunas of Sattva, Rajas, and Tamas — that performs all actions. The enlightened one sees this clearly and is freed from the bondage of karma."
+      }
+    ]
+  },
+  {
+    num: 4, name: "Jnana Karma Sannyas Yoga", hindi: "ज्ञान कर्म संन्यास योग",
+    eng: "The Yoga of Knowledge and Renunciation of Action", verses: 42,
+    desc: "Lord Krishna reveals the divine wisdom that has been transmitted through a chain of teachers since the beginning of creation. He explains his divine birth and actions, and describes the characteristics of the truly wise person who performs action in the spirit of sacrifice.",
+    shlokas: [
+      {
+        num: "4.7",
+        sanskrit: "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत।\nअभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम्॥",
+        translit: "Yada yada hi dharmasya glanir bhavati Bharata,\nAbhyutthanam adharmasya tadatmanam srjamy aham.",
+        english: "Whenever and wherever there is a decline in religious practice, O descendant of Bharata, and a predominant rise of irreligion — at that time I descend Myself.",
+        hindi: "हे भारत! जब-जब धर्म की हानि और अधर्म की वृद्धि होती है, तब-तब मैं स्वयं को प्रकट करता हूँ।",
+        commentary: "This is one of the most celebrated promises in all of spiritual literature. God is not indifferent to the world. Whenever Dharma declines and adharma rises, the Lord manifests in a form accessible to humanity. This could be as an avatar (divine incarnation), as a saint, as a prophet, or as inner divine inspiration."
+      },
+      {
+        num: "4.8",
+        sanskrit: "परित्राणाय साधूनां विनाशाय च दुष्कृताम्।\nधर्मसंस्थापनार्थाय सम्भवामि युगे युगे॥",
+        translit: "Paritranaya sadhunam vinasaya ca duskrtam,\nDharma-samsthapanarthaya sambhavami yuge yuge.",
+        english: "To deliver the pious and to annihilate the miscreants, as well as to reestablish the principles of religion, I Myself appear, millennium after millennium.",
+        hindi: "साधुओं की रक्षा के लिए, दुष्टों के विनाश के लिए और धर्म की स्थापना के लिए मैं युग-युग में प्रकट होता हूँ।",
+        commentary: "This verse, together with verse 4.7, forms the great promise of divine re-manifestation. The purpose of the Lord's descent is threefold: to protect the good, to remove evil, and to restore Dharma. This gives the devotee immense confidence — the forces of goodness are never alone, for the Lord himself is on their side."
+      },
+      {
+        num: "4.38",
+        sanskrit: "न हि ज्ञानेन सदृशं पवित्रमिह विद्यते।\nतत्स्वयं योगसंसिद्धः कालेनात्मनि विन्दति॥",
+        translit: "Na hi jnanena sadrsam pavitram iha vidyate,\nTat svayam yoga-samsiddhah kalenatmani vindati.",
+        english: "In this world, there is nothing so sublime and pure as transcendental knowledge. Such knowledge is the mature fruit of all mysticism. And one who has become accomplished in the practice of devotional service enjoys this knowledge within himself in due course of time.",
+        hindi: "इस संसार में ज्ञान के समान पवित्र करने वाला कुछ भी नहीं है। जो कोई योग में सिद्ध हो जाता है, वह कालांतर में अपने आप में उस ज्ञान को प्राप्त करता है।",
+        commentary: "Divine knowledge (Jnana) is the supreme purifier. Just as fire burns all impurities in gold, knowledge of the Self burns all the karmas and impurities of the mind. This knowledge is not intellectual but experiential — it dawns naturally in one who dedicates themselves to spiritual practice."
+      }
+    ]
+  },
+  {
+    num: 5, name: "Karma Sannyas Yoga", hindi: "कर्म संन्यास योग",
+    eng: "The Yoga of Renunciation of Action", verses: 29,
+    desc: "Krishna explains that both the path of renunciation (Sannyas) and the path of devoted action (Karma Yoga) lead to the same goal. The truly wise person acts in the world without being attached to the fruits of action.",
+    shlokas: [
+      {
+        num: "5.18",
+        sanskrit: "विद्याविनयसंपन्ने ब्राह्मणे गवि हस्तिनि।\nशुनि चैव श्वपाके च पण्डिताः समदर्शिनः॥",
+        translit: "Vidya-vinaya-sampanne brahmane gavi hastini,\nSuni caiva svapake ca panditah sama-darsinah.",
+        english: "The humble sages, by virtue of true knowledge, see with equal vision a learned and gentle Brahmana, a cow, an elephant, a dog, and a dog-eater (outcaste).",
+        hindi: "ज्ञानी-विनम्र ब्राह्मण में, गाय में, हाथी में, कुत्ते में और चांडाल में भी पंडित (ज्ञानी) समभाव से देखते हैं।",
+        commentary: "The sign of true wisdom is equanimity — seeing the same divine consciousness (Brahman) in all beings regardless of their outer form or social status. This is not a philosophical idea but a direct experience. When the Atman is seen in all, division, hatred, and discrimination become impossible."
+      },
+      {
+        num: "5.29",
+        sanskrit: "भोक्तारं यज्ञतपसां सर्वलोकमहेश्वरम्।\nसुहृदं सर्वभूतानां ज्ञात्वा मां शान्तिमृच्छति॥",
+        translit: "Bhoktaram yajna-tapasam sarva-loka-maheshvaram,\nSu-hrdam sarva-bhutanam jnatva mam santim rcchati.",
+        english: "A person in full consciousness of Me, knowing Me to be the ultimate beneficiary of all sacrifices and austerities, the Supreme Lord of all planets and demigods, and the benefactor and well-wisher of all living entities, attains peace from the pangs of material miseries.",
+        hindi: "मुझे सभी यज्ञों और तपों का भोक्ता, सभी लोकों का महेश्वर, और सभी प्राणियों का हितैषी मित्र जानकर मनुष्य शांति को प्राप्त होता है।",
+        commentary: "This is the concluding verse of Chapter 5 — a summary of the peace that comes from knowing God as the Supreme. When we surrender the fruits of all our actions to the Divine, knowing God as the ultimate recipient and well-wisher, all anxiety dissolves. This is the foundation of true devotion."
+      }
+    ]
+  },
+  {
+    num: 6, name: "Dhyana Yoga", hindi: "ध्यान योग",
+    eng: "The Yoga of Meditation", verses: 47,
+    desc: "In this chapter, Krishna describes the practice of meditation (Dhyana Yoga) and the qualities of a true yogi. He explains the method of controlling the mind through steady practice and dispassion, and assures that no spiritual effort is ever wasted.",
+    shlokas: [
+      {
+        num: "6.5",
+        sanskrit: "उद्धरेदात्मनात्मानं नात्मानमवसादयेत्।\nआत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः॥",
+        translit: "Uddhared atmanatmanam natmanam avasadayet,\nAtmaiva hy atmano bandhur atmaiva ripur atmanah.",
+        english: "Let a man lift himself by his own Self alone, let him not lower himself; for this Self alone is the friend of oneself and this Self alone is the enemy of oneself.",
+        hindi: "मनुष्य को चाहिए कि वह अपने आप को आप ही ऊपर उठाए, अपने आप को नीचे न गिराए। यह आत्मा ही अपना मित्र है और यही आत्मा अपना शत्रु भी है।",
+        commentary: "One of the most empowering verses in the Gita. You are your own best friend and your own worst enemy — depending on how you use your mind. If you discipline the mind and align it with higher values, it becomes your greatest ally. If you leave it undisciplined and driven by lower impulses, it becomes your greatest enemy. Self-mastery is the greatest achievement."
+      },
+      {
+        num: "6.35",
+        sanskrit: "श्रीभगवानुवाच\nअसंशयं महाबाहो मनो दुर्निग्रहं चलम्।\nअभ्यासेन तु कौन्तेय वैराग्येण च गृह्यते॥",
+        translit: "Sri Bhagavan uvaca:\nAsamshayam maha-baho mano durnigraham calam,\nAbhyasena tu Kaunteya vairagyena ca grhyate.",
+        english: "The Blessed Lord said: O mighty-armed Arjuna, undoubtedly the mind is restless and difficult to restrain, but it is subdued by practice (abhyasa) and detachment (vairagya).",
+        hindi: "श्री भगवान बोले: हे महाबाहो! निःसंदेह मन चंचल और कठिनाई से वश में होने वाला है, परंतु हे कुंतीपुत्र! अभ्यास और वैराग्य से यह वश में होता है।",
+        commentary: "Arjuna had complained that the mind is as difficult to control as the wind. Krishna agrees — but gives the solution: consistent practice (Abhyasa) and non-attachment (Vairagya). Like learning any skill, mind-mastery requires patient, daily practice over time. There are no shortcuts, but the fruits of a disciplined mind are beyond price."
+      },
+      {
+        num: "6.47",
+        sanskrit: "योगिनामपि सर्वेषां मद्गतेनान्तरात्मना।\nश्रद्धावान्भजते यो मां स मे युक्ततमो मतः॥",
+        translit: "Yoginam api sarvesam mad-gatenantaratmana,\nSraddha-van bhajate yo mam sa me yuktatamo matah.",
+        english: "And of all yogis, the one with great faith who always abides in Me, thinks of Me within himself, and renders transcendental loving service to Me — he is the most intimately united with Me in yoga and is the highest of all.",
+        hindi: "सभी योगियों में से जो श्रद्धावान भक्त मुझे अंतरात्मा में स्मरण करते हुए मेरी भक्ति करता है, वह मुझे सबसे अधिक युक्त (योगयुक्त) मानता है।",
+        commentary: "This concluding verse of Chapter 6 reveals that the path of loving devotion (Bhakti) is the highest of all yoga paths. Even among all the different types of yogis, the devotee who lovingly thinks of Krishna within their heart is considered the most intimately connected with God."
+      }
+    ]
+  },
+  {
+    num: 7, name: "Jnana Vijnana Yoga", hindi: "ज्ञान विज्ञान योग",
+    eng: "The Yoga of Knowledge and Wisdom", verses: 30,
+    desc: "Krishna reveals his divine nature, describing how he is the foundation of all existence. He explains the nature of his lower and higher energies, the four types of devotees, and the four types of non-devotees.",
+    shlokas: [
+      {
+        num: "7.7",
+        sanskrit: "मत्तः परतरं नान्यत्किञ्चिदस्ति धनञ्जय।\nमयि सर्वमिदं प्रोतं सूत्रे मणिगणा इव॥",
+        translit: "Mattah parataram nanyat kincid asti Dhananjaya,\nMayi sarvam idam protam sutre mani-gana iva.",
+        english: "O conqueror of wealth (Arjuna), there is no truth superior to Me. Everything rests upon Me, as pearls are strung on a thread.",
+        hindi: "हे धनंजय! मुझसे परे कुछ भी नहीं है। यह सब कुछ मुझमें ऐसे पिरोया हुआ है जैसे मणियाँ सूत्र में।",
+        commentary: "Krishna reveals his absolute supremacy. The beautiful image of pearls on a thread captures the relationship between God and creation perfectly. The individual beings (pearls) appear distinct and separate, but all are strung on the single thread of divine consciousness. God is both the transcendent cause and the immanent sustainer of all creation."
+      },
+      {
+        num: "7.19",
+        sanskrit: "बहूनां जन्मनामन्ते ज्ञानवान्मां प्रपद्यते।\nवासुदेवः सर्वमिति स महात्मा सुदुर्लभः॥",
+        translit: "Bahunam janmanam ante jnanavaan mam prapadyate,\nVasudevah sarvam iti sa mahatma su-durlabhah.",
+        english: "After many births and deaths, he who is actually in knowledge surrenders unto Me, knowing Me to be the cause of all causes and all that is. Such a great soul is very rare.",
+        hindi: "अनेक जन्मों के अंत में ज्ञानवान मनुष्य 'वासुदेव ही सब कुछ है' — इस भाव से मुझे प्राप्त होता है। ऐसा महात्मा अत्यंत दुर्लभ है।",
+        commentary: "This verse describes the culmination of the spiritual journey. After countless lifetimes of seeking, a rare soul arrives at the recognition that Vasudeva (the all-pervading God) IS everything — not just a part, but the totality of existence. This complete surrender to the All-in-All is the highest state of realization."
+      }
+    ]
+  },
+  {
+    num: 8, name: "Aksara Brahma Yoga", hindi: "अक्षर ब्रह्म योग",
+    eng: "The Yoga of the Imperishable Brahman", verses: 28,
+    desc: "This chapter explains the nature of Brahman, the individual soul, karma, and the cosmos. Krishna describes the paths of light and darkness after death, and the significance of remembering God at the time of death.",
+    shlokas: [
+      {
+        num: "8.7",
+        sanskrit: "तस्मात्सर्वेषु कालेषु मामनुस्मर युध्य च।\nमय्यर्पितमनोबुद्धिर्मामेवैष्यस्यसंशयम्॥",
+        translit: "Tasmad sarveshu kaleshu mam anusmara yudhya ca,\nMayy arpita-mano-buddhir mam evaisyasy asamsayam.",
+        english: "Therefore, O Arjuna, you should always think of Me in the form of Krishna and at the same time carry out your prescribed duty of fighting. With your activities dedicated to Me and your mind and intelligence fixed on Me, you will attain Me without doubt.",
+        hindi: "इसलिए हे अर्जुन! सभी समयों में मेरा स्मरण करते हुए युद्ध भी करो। मुझमें मन-बुद्धि अर्पित करने से तुम निःसंदेह मुझे ही प्राप्त होगे।",
+        commentary: "The practical instruction here is profound: do your worldly duty while keeping the mind anchored in God. This is the integration of action and meditation. We don't have to retire from the world to find God — we can live fully in the world while maintaining an inner current of divine remembrance."
+      },
+      {
+        num: "8.15",
+        sanskrit: "मामुपेत्य पुनर्जन्म दुःखालयमशाश्वतम्।\nनाप्नुवन्ति महात्मानः संसिद्धिं परमां गताः॥",
+        translit: "Mam upetya punar janma duhkhalayam asasvatam,\nNapnuvanti mahatmanah samsiddhim paramam gatah.",
+        english: "After attaining Me, the great souls, who are yogis in devotion, never return to this temporary world, which is full of miseries, because they have attained the highest perfection.",
+        hindi: "मुझे प्राप्त कर महात्मा लोग पुनर्जन्म को प्राप्त नहीं होते, जो दुःखों का घर और अनित्य है — क्योंकि वे परम सिद्धि को प्राप्त हो गए हैं।",
+        commentary: "The ultimate promise: liberation from the cycle of birth and death. The material world, however beautiful it may appear, is fundamentally characterized by impermanence and suffering (duhkhalaya). The goal of all spiritual practice is to realize one's unity with the Divine and be freed forever from the compulsive cycle of rebirth."
+      }
+    ]
+  },
+  {
+    num: 9, name: "Raja Vidya Raja Guhya Yoga", hindi: "राज विद्या राज गुह्य योग",
+    eng: "The Yoga of Royal Knowledge and Royal Secret", verses: 34,
+    desc: "Called the 'King of Knowledge and the King of Secrets', this chapter contains the heart of the Gita's teaching on devotion. Krishna reveals his omnipresence and promises to personally care for the welfare of his devoted ones.",
+    shlokas: [
+      {
+        num: "9.22",
+        sanskrit: "अनन्याश्चिन्तयन्तो मां ये जनाः पर्युपासते।\nतेषां नित्याभियुक्तानां योगक्षेमं वहाम्यहम्॥",
+        translit: "Ananyash cintayanto mam ye janah paryupasate,\nTesham nityabhiyuktanam yoga-ksemam vahamy aham.",
+        english: "But those who always worship Me with exclusive devotion, meditating on My transcendental form — to them, I carry what they lack, and I preserve what they have.",
+        hindi: "जो भक्त अनन्य भाव से मेरा चिंतन करते हुए मेरी उपासना करते हैं, उन नित्य-युक्त भक्तों का योगक्षेम (जो प्राप्त नहीं है उसकी प्राप्ति और जो प्राप्त है उसकी रक्षा) मैं स्वयं वहन करता हूँ।",
+        commentary: "This is one of the greatest promises of divine grace in all spiritual literature. God himself takes personal responsibility for the complete welfare of the sincere devotee — securing what they don't yet have and protecting what they do have. This is not conditional on wealth or status, but on the quality of devotion and surrender. No devotee who truly relies on God is ever left without support."
+      },
+      {
+        num: "9.26",
+        sanskrit: "पत्रं पुष्पं फलं तोयं यो मे भक्त्या प्रयच्छति।\nतदहं भक्त्युपहृतमश्नामि प्रयतात्मनः॥",
+        translit: "Patram puspam phalam toyam yo me bhaktya prayacchati,\nTad aham bhakty-upahrtam asnami prayatatmanah.",
+        english: "If one offers Me with love and devotion a leaf, a flower, a fruit, or water, I will accept it.",
+        hindi: "जो भक्त मुझे श्रद्धा-भक्ति से पत्र, पुष्प, फल, जल अर्पित करता है, उस शुद्ध मन वाले भक्त की भक्तिपूर्वक अर्पित वस्तु मैं स्वीकार करता हूँ।",
+        commentary: "The most touching verse of the Gita. God doesn't want elaborate offerings or expensive gifts — He wants the pure offering of love. Even a single leaf, a flower, a fruit, or a glass of water, offered with genuine devotion and a pure heart, is fully accepted. This teaches us that devotion is not about external ceremony but about the quality of the heart."
+      },
+      {
+        num: "9.34",
+        sanskrit: "मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु।\nमामेवैष्यसि युक्त्वैवमात्मानं मत्परायणः॥",
+        translit: "Man-mana bhava mad-bhakto mad-yaji mam namaskuru,\nMam evaishyasi yuktvaivamatmanam mat-parayanah.",
+        english: "Engage your mind always in thinking of Me, become My devotee, worship Me, and offer your homage unto Me. Thus you will come to Me without fail. I promise you this because you are My very dear friend.",
+        hindi: "मन को मुझमें लगाओ, मेरे भक्त बनो, मेरा पूजन करो, मुझे नमस्कार करो। इस प्रकार अपने आप को मुझमें समर्पित करने से तुम मुझे ही प्राप्त होगे।",
+        commentary: "Four practices are given: think of Me, be My devotee, worship Me, and bow to Me. These four cover the complete surrender of mind, heart, body, and ego to the Divine. This is the essence of Bhakti Yoga, and Krishna seals it with the most intimate assurance — 'you are My very dear friend.'"
+      }
+    ]
+  },
+  {
+    num: 10, name: "Vibhuti Yoga", hindi: "विभूति योग",
+    eng: "The Yoga of Divine Glories", verses: 42,
+    desc: "Krishna describes his divine manifestations (Vibhutis) — the most prominent expressions of his divine glory in the universe. This chapter helps devotees recognize the Divine in the best of everything in creation.",
+    shlokas: [
+      {
+        num: "10.20",
+        sanskrit: "अहमात्मा गुडाकेश सर्वभूताशयस्थितः।\nअहमादिश्च मध्यं च भूतानामन्त एव च॥",
+        translit: "Aham atma Gudakesa sarva-bhutasaya-sthitah,\nAham adis ca madhyam ca bhutanam anta eva ca.",
+        english: "I am the Self, O Gudakesha, seated in the hearts of all creatures. I am the beginning, the middle, and the end of all beings.",
+        hindi: "हे गुडाकेश (अर्जुन)! मैं सभी प्राणियों के हृदय में स्थित आत्मा हूँ। मैं ही सभी प्राणियों का आदि, मध्य और अंत हूँ।",
+        commentary: "The most direct statement of divine immanence: God is not just in heaven or temples — God is seated as the very Self (Atman) in the heart of every living being. This is not metaphorical but the deepest truth of existence. The one who realizes this sees God everywhere and in everyone."
+      },
+      {
+        num: "10.41",
+        sanskrit: "यद्यद्विभूतिमत्सत्त्वं श्रीमदूर्जितमेव वा।\nतत्तदेवावगच्छ त्वं मम तेजोंऽशसम्भवम्॥",
+        translit: "Yad yad vibhutimat sattvam srimad urjitam eva va,\nTat tad evavagaccha tvam mama tejo-'msa-sambhavam.",
+        english: "Know that all opulent, beautiful, and glorious creations spring from but a spark of My splendor.",
+        hindi: "जो भी ऐश्वर्यपूर्ण, सुंदर या शक्तिशाली वस्तु है, उसे तुम मेरे तेज के अंश से उत्पन्न समझो।",
+        commentary: "A practical guide to recognizing the Divine in everyday life. Wherever you see excellence, beauty, power, or glory — in art, in nature, in a great human being, in a majestic mountain or a brilliant scientist — you are seeing a spark of the Divine. This awareness transforms ordinary vision into sacred vision."
+      }
+    ]
+  },
+  {
+    num: 11, name: "Vishwarupa Darshan Yoga", hindi: "विश्वरूप दर्शन योग",
+    eng: "The Yoga of the Vision of the Cosmic Form", verses: 55,
+    desc: "This dramatic chapter describes Krishna's revelation of his Universal Form (Vishwarupa) to Arjuna — an awe-inspiring vision of the entire cosmos contained within the Divine. It is considered one of the greatest passages in world literature.",
+    shlokas: [
+      {
+        num: "11.12",
+        sanskrit: "दिवि सूर्यसहस्रस्य भवेद्युगपदुत्थिता।\nयदि भाः सदृशी सा स्याद्भासस्तस्य महात्मनः॥",
+        translit: "Divi surya-sahasrasya bhaved yugapad utthita,\nYadi bhah sadasi sa syad bhasas tasya mahatmanah.",
+        english: "If hundreds of thousands of suns were to rise at once into the sky, their radiance might resemble the effulgence of the Supreme Person in that universal form.",
+        hindi: "यदि आकाश में एक साथ हजारों सूर्य उदय हो जाएँ, तो भी उस महात्मा (विश्वरूप) की वह ज्योति उनके समान ही होगी।",
+        commentary: "Sanjaya describes the cosmic radiance of the Vishvarupa. This is one of the most sublime images in all of literature — the entire light of thousands of simultaneous suns as a mere approximation of God's glory. The purpose is not to overwhelm but to help the human mind glimpse the absolute infinity of the Divine."
+      },
+      {
+        num: "11.33",
+        sanskrit: "तस्मात्त्वमुत्तिष्ठ यशो लभस्व जित्वा शत्रून्भुङ्क्ष्व राज्यं समृद्धम्।\nमयैवैते निहताः पूर्वमेव निमित्तमात्रं भव सव्यसाचिन्॥",
+        translit: "Tasmat tvam uttistha yaso labhasva jitva satrun bhunksva rajyam samrddham,\nMayaivaite nihatah purvam eva nimitta-matram bhava savyasacin.",
+        english: "Therefore get up and prepare to fight and win glory. Conquer your enemies and enjoy a flourishing kingdom. They are already put to death by My arrangement, and you, O Savyasaci, can be but an instrument in the fight.",
+        hindi: "इसलिए उठो, यश प्राप्त करो और शत्रुओं को जीतकर समृद्ध राज्य का भोग करो। ये सब पहले से ही मेरे द्वारा मारे जा चुके हैं। हे सव्यसाची! तुम केवल निमित्त मात्र बनो।",
+        commentary: "This is the revelation of the Divine Plan — history moves according to a cosmic order that transcends our small plans and fears. Arjuna is asked to act as an instrument (nimitta) of the Divine Will rather than as an ego-driven actor trying to control outcomes. This teaching applies to all of us: our role is to act with excellence and surrender the results to God."
+      }
+    ]
+  },
+  {
+    num: 12, name: "Bhakti Yoga", hindi: "भक्ति योग",
+    eng: "The Yoga of Devotion", verses: 20,
+    desc: "Known as the chapter of pure devotion, Krishna here describes the path of Bhakti (loving devotion) as the highest and easiest path to God-realization. He also describes the qualities of the ideal devotee who is most dear to Him.",
+    shlokas: [
+      {
+        num: "12.13-14",
+        sanskrit: "अद्वेष्टा सर्वभूतानां मैत्रः करुण एव च।\nनिर्ममो निरहङ्कारः समदुःखसुखः क्षमी॥\nसन्तुष्टः सततं योगी यतात्मा दृढनिश्चयः।\nमय्यर्पितमनोबुद्धिर्यो मद्भक्तः स मे प्रियः॥",
+        translit: "Advesta sarva-bhutanam maitrah karuna eva ca,\nNirmamo nirahankarah sama-duhkha-sukhah ksami.\nSantustah satatam yogi yatatma drdha-niscayah,\nMayy arpita-mano-buddhir yo mad-bhaktah sa me priyah.",
+        english: "One who is not envious but is a kind friend to all living entities, who does not think himself a proprietor and is free from false ego, who is equal in both happiness and distress, who is tolerant, always satisfied, self-controlled, and engaged in devotional service with determination, his mind and intelligence fixed on Me — such a devotee of Mine is very dear to Me.",
+        hindi: "जो सब प्राणियों से द्वेष नहीं करता, सबका मित्र और करुणाशील है, ममता-अहंकार से रहित, सुख-दुःख में समान, क्षमाशील, सदा संतुष्ट, योगी, संयमी, दृढ़निश्चयी, और जिसने मन-बुद्धि मुझमें अर्पित कर दिए हैं — ऐसा मेरा भक्त मुझे प्रिय है।",
+        commentary: "These two verses list 24 qualities of the ideal devotee. Notice that these are not mystical or otherworldly qualities but deeply human virtues: kindness, humility, equanimity, patience, contentment, self-control. The Gita's vision of spiritual perfection is also the vision of perfect human character. When we cultivate these qualities, we become naturally dear to the Divine."
+      },
+      {
+        num: "12.20",
+        sanskrit: "ये तु धर्म्यामृतमिदं यथोक्तं पर्युपासते।\nश्रद्दधाना मत्परमा भक्तास्तेऽतीव मे प्रियाः॥",
+        translit: "Ye tu dharmyamritam idam yathoktam paryupasate,\nSraddadhana mat-parama bhaktas te 'tiva me priyah.",
+        english: "Those who follow this imperishable path of devotional service and who completely engage themselves with faith, making Me the supreme goal, are very, very dear to Me.",
+        hindi: "जो श्रद्धावान भक्त मुझे परम लक्ष्य मानकर इस धर्मरूपी अमृत का यथोक्त सेवन करते हैं, वे मुझे अत्यंत प्रिय हैं।",
+        commentary: "The concluding verse of the Bhakti Yoga chapter. The path of devotion is described as 'dharmyamritam' — the immortal nectar of righteousness. Faith (shraddha) and making God the supreme goal (mat-parama) are the two essentials. With these two qualities, the devotee becomes supremely dear to God."
+      }
+    ]
+  },
+  {
+    num: 13, name: "Kshetra Kshetrajna Vibhag Yoga", hindi: "क्षेत्र क्षेत्रज्ञ विभाग योग",
+    eng: "The Yoga of the Field and Its Knower", verses: 34,
+    desc: "Krishna explains the distinction between the body (Kshetra — the field) and the soul (Kshetrajna — the knower of the field). He describes the qualities that lead to knowledge and the ultimate nature of Brahman.",
+    shlokas: [
+      {
+        num: "13.2",
+        sanskrit: "क्षेत्रज्ञं चापि मां विद्धि सर्वक्षेत्रेषु भारत।\nक्षेत्रक्षेत्रज्ञयोर्ज्ञानं यत्तज्ज्ञानं मतं मम॥",
+        translit: "Ksetra-jnam capi mam viddhi sarva-ksetresu bharata,\nKsetra-ksetrajnayor jnanam yat taj jnanam matam mama.",
+        english: "O scion of Bharata, you should understand that I am also the knower in all bodies, and to understand this body and its knower is called knowledge. That is My opinion.",
+        hindi: "हे भारत! सभी क्षेत्रों (शरीरों) में क्षेत्रज्ञ (जानने वाला) भी मुझे ही जानो। क्षेत्र और क्षेत्रज्ञ का यह ज्ञान ही वास्तविक ज्ञान है — यह मेरा मत है।",
+        commentary: "Krishna reveals the deepest identity: God himself is the pure Consciousness that witnesses through every body. The individual soul (jiva) is the witness within one body; God (Paramatma) is the supreme witness within all bodies simultaneously. Knowing this distinction — and ultimately their unity — is true knowledge."
+      }
+    ]
+  },
+  {
+    num: 14, name: "Gunatraya Vibhag Yoga", hindi: "गुणत्रय विभाग योग",
+    eng: "The Yoga of the Division of Three Qualities", verses: 27,
+    desc: "This chapter explains the three fundamental qualities (Gunas) of material nature: Sattva (goodness), Rajas (passion), and Tamas (ignorance). Krishna describes how these gunas bind the soul and how to transcend them.",
+    shlokas: [
+      {
+        num: "14.5",
+        sanskrit: "सत्त्वं रजस्तम इति गुणाः प्रकृतिसम्भवाः।\nनिबध्नन्ति महाबाहो देहे देहिनमव्ययम्॥",
+        translit: "Sattvam rajas tama iti gunah prakrti-sambhavah,\nNibadhnanti maha-baho dehe dehinam avyayam.",
+        english: "Material nature consists of three modes — goodness, passion, and ignorance. When the eternal living entity comes in contact with nature, O mighty-armed Arjuna, he becomes conditioned by these modes.",
+        hindi: "हे महाबाहो! सत्त्व, रज और तम — ये प्रकृति से उत्पन्न तीन गुण अविनाशी जीवात्मा को देह में बाँधते हैं।",
+        commentary: "The three gunas are the fundamental forces governing all of material existence. Tamas (inertia) leads to laziness, delusion, and sleep. Rajas (activity) leads to desire, passion, and restlessness. Sattva (clarity) leads to knowledge, purity, and peace. The goal is to cultivate Sattva, use it to transcend all three gunas, and reside in the pure Self beyond all conditionings."
+      }
+    ]
+  },
+  {
+    num: 15, name: "Purushottama Yoga", hindi: "पुरुषोत्तम योग",
+    eng: "The Yoga of the Supreme Person", verses: 20,
+    desc: "Krishna describes the cosmic Ashvattha tree (the tree of material existence) and explains the nature of the three Purushas: the perishable, the imperishable, and the Supreme Person (Purushottama) who transcends both.",
+    shlokas: [
+      {
+        num: "15.15",
+        sanskrit: "सर्वस्य चाहं हृदि सन्निविष्टो मत्तः स्मृतिर्ज्ञानमपोहनं च।\nवेदैश्च सर्वैरहमेव वेद्यो वेदान्तकृद्वेदविदेव चाहम्॥",
+        translit: "Sarvasya caham hrdi sannivisto mattah smrtir jnanam apohanam ca,\nVedais ca sarvair aham eva vedyo vedanta-krd veda-vid eva caham.",
+        english: "I am seated in everyone's heart, and from Me come remembrance, knowledge, and forgetfulness. By all the Vedas, I am to be known. Indeed, I am the compiler of Vedanta, and I am the knower of the Vedas.",
+        hindi: "मैं सभी के हृदय में स्थित हूँ, मुझसे ही स्मृति, ज्ञान और विस्मरण होता है। मैं ही सभी वेदों द्वारा जानने योग्य हूँ, वेदांत का रचयिता और वेदों का जानने वाला भी मैं ही हूँ।",
+        commentary: "God is not only in the heavens or in scriptures — God is seated in the very core of every heart, the inner illuminator of all thought and memory. When we suddenly remember something, when sudden insight arises, when even forgetfulness occurs — all these arise from the Lord within. The entire Vedic tradition points toward this inner revelation."
+      }
+    ]
+  },
+  {
+    num: 16, name: "Daivasura Sampad Vibhag Yoga", hindi: "दैवासुर संपद विभाग योग",
+    eng: "The Yoga of the Divine and Demoniac Natures", verses: 24,
+    desc: "This chapter contrasts the divine qualities (Daivi Sampat) that lead to liberation with the demoniac qualities (Asuri Sampat) that lead to bondage. It is a practical guide to self-assessment and spiritual growth.",
+    shlokas: [
+      {
+        num: "16.1-3",
+        sanskrit: "अभयं सत्त्वसंशुद्धिर्ज्ञानयोगव्यवस्थितिः।\nदानं दमश्च यज्ञश्च स्वाध्यायस्तप आर्जवम्॥\nअहिंसा सत्यमक्रोधस्त्यागः शान्तिरपैशुनम्।\nदया भूतेष्वलोलुप्त्वं मार्दवं ह्रीरचापलम्॥\nतेजः क्षमा धृतिः शौचमद्रोहो नातिमानिता।\nभवन्ति सम्पदं दैवीमभिजातस्य भारत॥",
+        translit: "Abhayam sattva-samsuddhir jnana-yoga-vyavasthitih,\nDanam damas ca yajnas ca svadhyayas tapa arjavam...",
+        english: "Fearlessness, purification of one's existence, cultivation of spiritual knowledge, charity, self-control, performance of sacrifice, study of the Vedas, austerity and simplicity; nonviolence, truthfulness, freedom from anger, renunciation, tranquility, aversion to faultfinding, compassion and freedom from covetousness, gentleness, modesty and steady determination; vigor, forgiveness, fortitude, cleanliness, freedom from envy and the passion for honor — these transcendental qualities, O son of Bharata, belong to godly men endowed with divine nature.",
+        hindi: "निर्भयता, अंतःकरण की शुद्धि, ज्ञान-योग में दृढ़ता, दान, इंद्रियों पर नियंत्रण, यज्ञ, स्वाध्याय, तप, सरलता, अहिंसा, सत्य, अक्रोध, त्याग, शांति, चुगली न करना, करुणा, लोभहीनता, मृदुता, लज्जा, चंचलता न होना, तेज, क्षमा, धैर्य, शुचिता, द्रोह न करना और अभिमान न होना — ये सब दैवी संपद वाले पुरुष के लक्षण हैं।",
+        commentary: "Twenty-six divine qualities are listed here — this is the Gita's vision of ideal character. Notice that these are practical, cultivable virtues, not miraculous powers. The spiritual path is fundamentally the path of character development. As we cultivate these qualities, we naturally align with the Divine and move toward liberation."
+      }
+    ]
+  },
+  {
+    num: 17, name: "Shraddhatraya Vibhag Yoga", hindi: "श्रद्धात्रय विभाग योग",
+    eng: "The Yoga of the Threefold Faith", verses: 28,
+    desc: "This chapter analyzes faith (Shraddha), food, sacrifice, austerity, and charity according to the three gunas. The famous mantra 'Om Tat Sat' is explained as representing the Supreme Absolute Truth.",
+    shlokas: [
+      {
+        num: "17.3",
+        sanskrit: "सत्त्वानुरूपा सर्वस्य श्रद्धा भवति भारत।\nश्रद्धामयोऽयं पुरुषो यो यच्छ्रद्धः स एव सः॥",
+        translit: "Sattvanuruupa sarvasyashraddha bhavati bharata,\nShraddhamayo 'yam purusho yo yac-chraddhah sa eva sah.",
+        english: "O son of Bharata, the faith of each person is in accordance with his nature. Man is made of faith; as his faith is, so he is.",
+        hindi: "हे भारत! सभी मनुष्यों की श्रद्धा उनके स्वभाव के अनुसार होती है। यह मनुष्य श्रद्धामय है — जो जैसी श्रद्धा वाला है, वह वैसा ही है।",
+        commentary: "This profound psychological insight reveals that each person's faith (Shraddha) reflects and shapes their character. We become what we deeply believe. If our faith is placed in the highest — in truth, in goodness, in God — we are elevated. If placed in lower things, we are diminished. Consciously cultivating Sattvic (pure) faith is therefore the most fundamental work of human development."
+      }
+    ]
+  },
+  {
+    num: 18, name: "Moksha Sannyas Yoga", hindi: "मोक्ष संन्यास योग",
+    eng: "The Yoga of Liberation through Renunciation", verses: 78,
+    desc: "The concluding and longest chapter summarizes all the teachings of the Gita. Krishna explains true renunciation, the three aspects of knowledge/action/doer, the nature of duty, the three types of happiness, and concludes with the most important verse — the ultimate surrender.",
+    shlokas: [
+      {
+        num: "18.46",
+        sanskrit: "यतः प्रवृत्तिर्भूतानां येन सर्वमिदं ततम्।\nस्वकर्मणा तमभ्यर्च्य सिद्धिं विन्दति मानवः॥",
+        translit: "Yatah pravrttir bhutanam yena sarvam idam tatam,\nSva-karmana tam abhyarcya siddhim vindati manavah.",
+        english: "By worship of the Lord, who is the source of all beings and who is all-pervading, a man can attain perfection through performing his own work.",
+        hindi: "जिससे सभी प्राणियों की उत्पत्ति होती है और जिससे यह सब व्याप्त है, उस परमात्मा को अपने कर्म से पूजकर मनुष्य सिद्धि को प्राप्त होता है।",
+        commentary: "The revolutionary teaching: you don't have to abandon the world to find God. Your work itself — whatever your natural duty — performed as an offering to God, becomes a path to liberation. The cobbler, the farmer, the teacher, the warrior — all can find God through their own authentic work when it is done with devotion and offered to the Divine."
+      },
+      {
+        num: "18.61",
+        sanskrit: "ईश्वरः सर्वभूतानां हृद्देशेऽर्जुन तिष्ठति।\nभ्रामयन्सर्वभूतानि यन्त्रारूढानि मायया॥",
+        translit: "Ishvarah sarva-bhutanam hrd-dese 'rjuna tisthati,\nBhramayan sarva-bhutani yantrarudhani mayaya.",
+        english: "The Supreme Lord is situated in everyone's heart, O Arjuna, and is directing the wanderings of all living entities, who are seated as on a machine, made of the material energy.",
+        hindi: "हे अर्जुन! ईश्वर सभी प्राणियों के हृदय में स्थित है और माया से यंत्र पर आरूढ़ सभी प्राणियों को घुमाता है।",
+        commentary: "A profound image: each person is like a traveler seated in a vehicle (the body-mind), and God is the driver. When we forget this — when we mistake ourselves for the driver — we suffer. When we consciously return the steering wheel to God through surrender, the journey becomes guided, graceful, and purposeful."
+      },
+      {
+        num: "18.65",
+        sanskrit: "मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु।\nमामेवैष्यसि सत्यं ते प्रतिजाने प्रियोऽसि मे॥",
+        translit: "Man-mana bhava mad-bhakto mad-yaji mam namaskuru,\nMam evaisyasi satyam te pratijane priyo 'si me.",
+        english: "Always think of Me, become My devotee, worship Me and offer your homage unto Me. Thus you will come to Me without fail. I promise you this because you are My very dear friend.",
+        hindi: "मन को मुझमें लगाओ, मेरे भक्त बनो, मेरी पूजा करो, मुझे नमस्कार करो। तुम मुझे ही प्राप्त होगे। मैं तुमसे सच्चा वचन देता हूँ, क्योंकि तुम मेरे प्रिय हो।",
+        commentary: "One of the most intimate moments in the Gita — God himself making a personal promise. 'Priyo asi me' — 'You are dear to Me.' God loves us personally and unconditionally. The promise of liberation is given not as a doctrine but as a declaration of divine love. This friendship between the seeker and God is the heart of the entire Gita."
+      },
+      {
+        num: "18.66",
+        sanskrit: "सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज।\nअहं त्वां सर्वपापेभ्यो मोक्षयिष्यामि मा शुचः॥",
+        translit: "Sarva-dharman parityajya mam ekam saranam vraja,\nAham tvam sarva-papebhyo moksayisyami ma sucah.",
+        english: "Abandon all varieties of religion and just surrender unto Me. I shall deliver you from all sinful reactions. Do not fear.",
+        hindi: "सभी धर्मों को त्यागकर एकमात्र मेरी शरण में आ जाओ। मैं तुम्हें सभी पापों से मुक्त कर दूँगा। चिंता मत करो।",
+        commentary: "The Charama Shloka — the Final Verse, the most important teaching of the entire Gita. 'Sarva-dharman parityajya' means abandoning all limited, ego-based identities and 'mam ekam saranam vraja' — seeking refuge in the One Divine alone. This is the highest teaching: complete surrender (Sharanagati) to God. In return, God's unconditional promise: 'I will free you from all sins. Do not grieve.' This verse has given hope, peace, and liberation to countless souls over 5,000 years. It is the eternal promise of God to every soul that turns to Him."
+      },
+      {
+        num: "18.78",
+        sanskrit: "यत्र योगेश्वरः कृष्णो यत्र पार्थो धनुर्धरः।\nतत्र श्रीर्विजयो भूतिर्ध्रुवा नीतिर्मतिर्मम॥",
+        translit: "Yatra yogeshvarah krishno yatra partho dhanur-dharah,\nTatra srir vijayo bhutir dhruva nitir matir mama.",
+        english: "Wherever there is Krishna, the master of all mystics, and wherever there is Arjuna, the supreme archer, there will also certainly be opulence, victory, extraordinary power, and morality. That is my opinion.",
+        hindi: "जहाँ योगेश्वर श्रीकृष्ण हैं और जहाँ धनुर्धारी अर्जुन हैं, वहाँ श्री (समृद्धि), विजय, विभूति और ध्रुव नीति है — ऐसा मेरा मत है।",
+        commentary: "The final verse of the Bhagavad Gita. Sanjaya speaks these words with the certainty of one who has seen the divine vision. When God (the inner guide) and the sincere seeker (the willing instrument) come together — when divine wisdom meets human effort — the result is inevitable: prosperity, victory, power, and righteousness. This is the eternal promise with which the Gita closes. 🙏"
+      }
+    ]
+  }
+];
+
+// Build navigation
+const nav = document.getElementById('mainNav');
+chapters.forEach(ch => {
+  const btn = document.createElement('button');
+  btn.textContent = `${ch.num}. ${ch.name.split(' ')[0]}`;
+  btn.onclick = () => showChapter(ch.num);
+  btn.id = `nav-ch-${ch.num}`;
+  nav.appendChild(btn);
+});
+
+// Build chapter index
+const idx = document.getElementById('chapterIndex');
+chapters.forEach(ch => {
+  const card = document.createElement('div');
+  card.className = 'chapter-card';
+  card.innerHTML = `
+    <div class="ch-num">Chapter ${ch.num}</div>
+    <div class="ch-name">${ch.name}</div>
+    <div class="ch-hindi">${ch.hindi}</div>
+    <div class="ch-verses">${ch.verses} verses</div>
+  `;
+  card.onclick = () => showChapter(ch.num);
+  idx.appendChild(card);
+});
+
+// Build chapter pages
+const main = document.querySelector('main');
+chapters.forEach(ch => {
+  const div = document.createElement('div');
+  div.id = `page-ch-${ch.num}`;
+  div.className = 'page';
+
+  let shlokaHTML = ch.shlokas.map(s => `
+    <div class="shloka-card">
+      <div class="shloka-num-bar">
+        <span class="verse-label">॥ Shloka ${s.num} ॥</span>
+        <div class="divider"></div>
+      </div>
+      <div class="shloka-body">
+        <div class="sanskrit-block">
+          <div class="sanskrit-text">${s.sanskrit.replace(/\n/g,'<br>')}</div>
+          <div class="transliteration">${s.translit.replace(/\n/g,'<br>')}</div>
+        </div>
+        <div class="translation-section">
+          <span class="lang-badge">🇬🇧 English</span>
+          <div class="translation-text">${s.english}</div>
+        </div>
+        <div class="translation-section" style="margin-top:14px;">
+          <span class="lang-badge hindi">🇮🇳 हिंदी</span>
+          <div class="translation-text hindi">${s.hindi}</div>
+        </div>
+        <div class="translation-section" style="margin-top:14px;">
+          <span class="lang-badge commentary">📿 Commentary</span>
+          <div class="translation-text commentary">${s.commentary}</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  div.innerHTML = `
+    <div class="chapter-header">
+      <div class="ch-number">Chapter ${ch.num}</div>
+      <h2>${ch.hindi}</h2>
+      <div class="ch-eng-title">${ch.name} — ${ch.eng}</div>
+      <p class="ch-desc">${ch.desc}</p>
+      <div class="verse-count">● ${ch.verses} Verses ●</div>
+    </div>
+    <div class="sacred-divider">✦ ॐ ✦ ॐ ✦ ॐ ✦</div>
+    ${shlokaHTML}
+    <div class="chapter-nav-btns">
+      <button onclick="showChapter(${ch.num - 1})" ${ch.num === 1 ? 'disabled' : ''}>
+        ← Chapter ${ch.num - 1}
+      </button>
+      <button onclick="showPage('home')">📚 All Chapters</button>
+      <button onclick="showChapter(${ch.num + 1})" ${ch.num === 18 ? 'disabled' : ''}>
+        Chapter ${ch.num + 1} →
+      </button>
+    </div>
+  `;
+  main.appendChild(div);
+});
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(`page-${id}`).classList.add('active');
+  const navBtn = id === 'home'
+    ? document.querySelector('nav button')
+    : document.getElementById(`nav-ch-${id.replace('ch-','')}`);
+  if (navBtn) navBtn.classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function showChapter(num) {
+  if (num < 1 || num > 18) return;
+  showPage(`ch-${num}`);
+  document.getElementById(`nav-ch-${num}`).classList.add('active');
+}
+</script>
+</body>
+</html>
